@@ -12,12 +12,9 @@ import java.util.List;
  * Created by filip on 26.2.18.
  */
 
-public class NotesAdapter extends RecyclerView.Adapter & lt;
-        NotesAdapter.MyViewHolder & gt; {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
 
-private List & lt;
-        NotesBuilder & gt;
-        notesList;
+private List<NotesBuilder>notesList;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView title, content;
@@ -30,7 +27,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     }
 }
 
-    public NotesAdapter(List & lt; NotesBuilder & gt; notesList) {
+    public NotesAdapter(List<NotesBuilder>notesList) {
         this.notesList = notesList;
     }
 
