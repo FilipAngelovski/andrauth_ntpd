@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,15 +29,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText1 = (EditText)findViewById(R.id.EditText1);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        EditText1 = findViewById(R.id.EditText1);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+
+
+            final DateFormat dateFormat = new SimpleDateFormat("yy-MM-dd_HH-mm-ss");
+            String filename = dateFormat.format(new Date().getTime());
+
             @Override
             public void onClick(View view) {
-                Save("Note1.txt");
+                Save(filename + ".txt");
             }
         });
 

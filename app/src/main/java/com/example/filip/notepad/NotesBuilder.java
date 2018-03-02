@@ -1,3 +1,5 @@
+package com.example.filip.notepad;
+
 /**
  * Created by filip on 26.2.18.
  */

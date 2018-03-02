@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Notepad</string>
-    <string name="List_Notes">Settings</string>
+    <string name="List_Notes">List Notes</string>
     <string name="title_activity_note_select">NoteSelect</string>
 </resources>

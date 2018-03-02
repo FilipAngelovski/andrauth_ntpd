@@ -1,10 +1,10 @@
+package com.example.filip.notepad;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.filip.notepad.R;
 
 import java.util.List;
 

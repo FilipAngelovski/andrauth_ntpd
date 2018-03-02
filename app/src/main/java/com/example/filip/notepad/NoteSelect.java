@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
-import com.example.filip.notepad.NotesBuilder
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,10 +20,7 @@ import java.util.List;
 
 public class NoteSelect extends AppCompatActivity {
 
-    private List & lt;
-    NotesBuilder & gt;
-    notesList = new ArrayList & lt; & gt;
-    ();
+    private List<NotesBuilder> notesList = new ArrayList <>();
     private NotesAdapter nAdapter;
     private RecyclerView notesRecycler;
 
@@ -62,8 +58,8 @@ public class NoteSelect extends AppCompatActivity {
         directory = getFilesDir();
         File[] files = directory.listFiles();
         String theFile;
-        for (int f = 1; f & lt; = files.length; f++) {
-            theFile = "Note" + f + ".txt";
+        for (int f = 1; f == files.length; f++) {
+            theFile = files[f].getName() + ".txt";
             NotesBuilder note = new NotesBuilder(theFile, Open(theFile));
             notesList.add(note);
         }
