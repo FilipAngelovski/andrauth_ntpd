@@ -8,6 +8,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -49,20 +50,28 @@ public class NoteSelect extends AppCompatActivity {
         notesRecycler.setItemAnimator(new DefaultItemAnimator());
         notesRecycler.setAdapter(nAdapter);
 
+        Log.i("onCreate()", "NoteSelect => onCreate()");
+
         prepareNotes();
 
     }
 
     private void prepareNotes() {
-        File directory;
-        directory = getFilesDir();
-        File[] files = directory.listFiles();
-        String theFile;
-        for (int f = 0; f == files.length; f++) {
-            theFile = files[f].getName() + ".txt";
-            NotesBuilder note = new NotesBuilder(theFile, Open(theFile));
-            notesList.add(note);
+        try {
+            File directory;
+            directory = getFilesDir();
+            File[] files = directory.listFiles();
+            String theFile;
+            Log.i("prepareNotes()", "before_for");
+            for (File f : files)
+            {
+                theFile = f.getName();
+                Log.i("prepareNotes()", "theFile");
+                NotesBuilder note = new NotesBuilder(theFile, Open(theFile));
+                notesList.add(note);
+            }
         }
+        catch (Exception e){Log.e("prepareNotes()", "Exception",e);};
 
     }
 
