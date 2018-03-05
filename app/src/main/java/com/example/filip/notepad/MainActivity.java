@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
                 Save(filename + ".txt");
             }
         });
-
-        EditText1.setText(Open("Note1.txt"));
     }
 
 

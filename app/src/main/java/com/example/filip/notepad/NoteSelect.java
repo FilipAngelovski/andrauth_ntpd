@@ -58,7 +58,7 @@ public class NoteSelect extends AppCompatActivity {
         directory = getFilesDir();
         File[] files = directory.listFiles();
         String theFile;
-        for (int f = 1; f == files.length; f++) {
+        for (int f = 0; f == files.length; f++) {
             theFile = files[f].getName() + ".txt";
             NotesBuilder note = new NotesBuilder(theFile, Open(theFile));
             notesList.add(note);
